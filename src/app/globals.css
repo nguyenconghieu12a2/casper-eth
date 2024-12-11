@@ -3,19 +3,26 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary: #0d193b;
+  --secondary: #182a5c;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  font-family: "Irish Grover", system-ui;
+  font-weight: 400;
+  font-style: normal;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply text-white bg-gra-1;
+}
+
+@layer component {
+  .bg-gra-1 {
+    background-image: linear-gradient(to bottom, var(--primary), #182a5c);
+  }
+
+  .bg-gra-2 {
+    background-image: linear-gradient(to right, var(--secondary), #00165a);
+  }
 }
